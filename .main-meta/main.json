@@ -1,0 +1,54 @@
+{
+    "metaDataVersion": "1.0.0",
+    "category": "com.microchip.ide.project",
+    "content": {
+        "metaDataVersion": "1.3.0",
+        "name": "com.microchip.mcu8.mplabx.project.avr128db48-room-temp-sensor-mplab",
+        "version": " ",
+        "displayName": "",
+        "projectName": "avr128db48-room-temp-sensor-mplab",
+        "shortDescription": "Using an MLX90632 FIR sensor the AVR DB will measure the room temperature and print the value to a UART",
+        "ide": {
+            "name": "MPLAB X",
+            "semverRange": ">=6.00.0"
+        },
+        "compiler": [
+            {
+                "name": "XC8",
+                "semverRange": "^2.35.0"
+            }
+        ],
+        "dfp": {
+            "name": "",
+            "semverRange": ""
+        },
+        "configurator": {
+            "name": "",
+            "semverRange": ""
+        },
+        "device": {
+            "metaDataVersion": "1.0.0",
+            "category": "com.microchip.portal.contentRef",
+            "content": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.device",
+                "name": "AVR128DB48",
+                "versionRange": "*"
+            }
+        },
+        "author": "Robert Perkel",
+        "peripherals": [],
+        "keywords": [],
+        "additionalData": {
+            "longDescription": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.portal.fileRef",
+                "content": {
+                    "metaDataVersion": "1.0.0",
+                    "fileName": "./README.md",
+                    "mimeType": "text/markdown"
+                }
+            }
+        }
+    }
+}
