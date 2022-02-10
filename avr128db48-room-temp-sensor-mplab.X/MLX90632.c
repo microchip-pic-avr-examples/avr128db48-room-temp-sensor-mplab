@@ -8,8 +8,6 @@
 #include <stdbool.h>
 #include <math.h>
 
-#include "MLX90392.h"
-
 #include "TWI0_host.h"
 
 //I2C Address to Communicate at. Can be changed later
