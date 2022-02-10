@@ -10,7 +10,7 @@
         "shortDescription": "Using an MLX90632 FIR sensor the AVR DB will measure the room temperature and print the value to a UART",
         "ide": {
             "name": "MPLAB X",
-            "semverRange": ">=6.00.0"
+            "semverRange": ">=6.0.0"
         },
         "compiler": [
             {
