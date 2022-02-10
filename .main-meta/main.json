@@ -35,7 +35,7 @@
         "author": "Robert Perkel",
         "peripherals": [ "TWI", "RTC", "USART" ],
         "keywords": [
-          "Sensor", "Temperature", "TWI", "USART"
+          "Sensor", "Temperature", "TWI", "USART", "Bare Metal"
         ],
         "additionalData": {
             "longDescription": {
