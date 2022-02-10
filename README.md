@@ -37,6 +37,7 @@ Connect the IR Thermo 3 Click to any of the slots on the Curiosity Nano Base Boa
 | PA3 | I<sup>2</sup>C SCL
 | PB0 | UART TX
 | PB1 | UART RX (unused, but reserved)
+| PB2 | SW0 - Safe Mode Button
 | PD3 | On-Board LED (changes states when results are ready)
 
 
@@ -107,6 +108,12 @@ The temperature unit is set by `#define DEFAULT_TEMP_UNIT` in **tempMonitor.h**.
 Please note, the unit specifiers are *case sensitive*. If an invalid specifier is set, the program will default to Celsius.
 
 ## Theory of Operation
+
+### Constant Caching
+
+To improve startup speed, the constants read and pre-computed from the sensor are stored into the internal EEPROM of the microcontroller. During subsequent startups, the EEPROM is verified against the device ID of the sensor and the XOR of those bytes.
+
+This feature can be bypassed by holding SW0 down when powering up the Curiosity Nano. To permanently disable constant caching, comment out `#define CACHE_CONSTANTS` in **MLX90632.h**.
 
 ### Main Loop
 
