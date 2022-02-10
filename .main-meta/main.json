@@ -7,7 +7,7 @@
         "version": "1.0.0",
         "displayName": "Room Temperature Monitor with AVR DB and MLX90632",
         "projectName": "avr128db48-room-temp-sensor-mplab",
-        "shortDescription": "Using an MLX90632 FIR sensor the AVR DB will measure the room temperature and print the value to a UART",
+        "shortDescription": "Using an MLX90632 FIR sensor, the AVR DB will calculate the room temperature and print the value to a UART.",
         "ide": {
             "name": "MPLAB X",
             "semverRange": ">=6.0.0"

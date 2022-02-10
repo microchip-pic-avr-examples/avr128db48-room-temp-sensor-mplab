@@ -4,7 +4,7 @@
 
 # Room Temperature Monitor with AVR&reg; DB and MLX90632
 
-This virtual kit creates a simple room temperature monitor using the AVR&reg; DB microcontroller to communicate with an MLX90632 Far InfraRed (FIR) sensor to measure the temperature of an object (which represents that of room temp). Communication with the MLX90632 is over I<sup>2</sup>C and data is sent to the computer over UART. Measurements from this demo can be read in plaintext on a serial terminal, or can be plotted over time in MPLAB&reg; Data Visualizer.
+This virtual kit creates a simple room temperature monitor using the AVR&reg; DB microcontroller to communicate with an MLX90632 Far InfraRed (FIR) sensor to measure the temperature of an object (which is assumed to represent the room's temperature). Communication with the MLX90632 is over I<sup>2</sup>C and data is sent to the computer over UART. Measurements from this demo can be read in plaintext on a serial terminal, or can be plotted over time in MPLAB&reg; Data Visualizer.
 
 ## Related Documentation
 
@@ -131,7 +131,7 @@ In `TEMP_ERROR`, nothing will occur. If a program enters this state, a reset of 
 
 ## Calibration and Accuracy
 
-This demo does not calibrate the temperature sensor. Depending on the specific environmental characteristics and temperatures in the field of view of the sensor, there will be an offset and slightly non-linear response.
+This demo does not calibrate the temperature sensor. Depending on the specific environmental characteristics and temperatures in the field of view of the sensor, there will be an offset and some non-linear response.
 
 ## Summary
 
