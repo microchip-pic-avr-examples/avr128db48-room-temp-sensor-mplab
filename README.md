@@ -14,7 +14,7 @@ This virtual kit creates a simple room temperature monitor using the AVR&reg; DB
 ## Software Used
 
 - [MPLAB X IDE v6.00 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_avrdb&utm_content=avr128db48-room-temp-sensor-mplab-github)
-- [MPLAB XC8 v2.36 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_avrdb&utm_content=avr128db48-room-temp-sensor-mplab-github)
+- [MPLAB XC8 v2.35 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_avrdb&utm_content=avr128db48-room-temp-sensor-mplab-github)
 - [MPLAB Data Visualizer](https://www.microchip.com/en-us/tools-resources/debug/mplab-data-visualizer?utm_source=GitHub&utm_medium=TextLink&utm_campaign=MCU8_MMTCha_avrdb&utm_content=avr128db48-room-temp-sensor-mplab-github)
 
 ## Hardware Used

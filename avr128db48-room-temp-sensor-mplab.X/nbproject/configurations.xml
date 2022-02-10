@@ -60,7 +60,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.36</languageToolchainVersion>
+        <languageToolchainVersion>2.35</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -268,6 +268,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-ffff"/>
         <property key="poweroptions.powerenable" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/C62081/Documents/GIT Repos/avr128db48-room-temp-sensor-mplab/avr128db48-room-temp-sensor-mplab.X/debug/XC8_free/avr128db48-room-temp-sensor-mplab_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -293,7 +295,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.36</languageToolchainVersion>
+        <languageToolchainVersion>2.35</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -501,6 +503,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/C62081/Documents/GIT Repos/avr128db48-room-temp-sensor-mplab/avr128db48-room-temp-sensor-mplab.X/debug/XC8_pro/avr128db48-room-temp-sensor-mplab_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
@@ -833,6 +837,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/C62081/Documents/GIT Repos/avr128db48-room-temp-sensor-mplab/avr128db48-room-temp-sensor-mplab.X/debug/AVR_GCC/avr128db48-room-temp-sensor-mplab_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
