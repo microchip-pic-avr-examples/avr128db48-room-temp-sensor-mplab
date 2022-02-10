@@ -33,7 +33,10 @@ void tempMonitor_init(bool safeStart)
 {
     bool success;
     
+#ifndef DV_FLOAT_OUT
     USB_sendString("Initializing MLX90632 Temperature Sensor...");
+#endif
+    
     if (safeStart)
     {
         //Button is Held - Safe Mode
@@ -48,29 +51,30 @@ void tempMonitor_init(bool safeStart)
     //EEPROM was successfully loaded
     if (MLX90632_cacheOK())
     {
+    #ifndef DV_FLOAT_OUT
         //Load EEPROM Value for RTC Period
-        USB_sendString("\r\nLoaded cached constants and settings...");
-        
-        //Update RTC Timer
-        RTC_setPeriod(eeprom_read_word((uint16_t*) TEMP_UPDATE_PERIOD));
+        USB_sendString("\r\nLoaded cached constants...");
+    #endif
     }
     else
     {
-        //Write the default RTC Period to EEPROM
+    #ifndef DV_FLOAT_OUT
         USB_sendString("\r\nLoaded constants from sensor and reset to defaults...");
-        
-        //Write Default Sample Rate Value
-        eeprom_write_word((uint16_t*) TEMP_UPDATE_PERIOD, RTC_getPeriod());        
+    #endif
     }
     
     //Print Result
     if (success)
     {
+#ifndef DV_FLOAT_OUT
         USB_sendString("OK\r\n");
+#endif
     }
     else
     {
+#ifndef DV_FLOAT_OUT
         USB_sendString("FAILED\r\n");
+#endif
         tempState = TEMP_ERROR;
     }
 }
@@ -90,8 +94,10 @@ void tempMonitor_FSM(void)
 
             //Move to the next state
             if (!success)
-            {               
+            {              
+#ifndef DV_FLOAT_OUT
                 USB_sendString("[ERR] Failed to start temp conversion in TEMP_START\r\n");
+#endif
                 tempState = TEMP_ERROR;
             }
             else
@@ -111,7 +117,9 @@ void tempMonitor_FSM(void)
                 //Move to the next state
                 if (!success)
                 {
+#ifndef DV_FLOAT_OUT
                     USB_sendString("[ERR] Failed to get temp data from MLX90632_getResults()\r\n");
+#endif
                     tempState = TEMP_ERROR;
                 }
                 else
@@ -136,7 +144,9 @@ void tempMonitor_FSM(void)
             }
             else
             {
+#ifndef DV_FLOAT_OUT
                 USB_sendString("[ERR] Failed to compute temp from MLX90632_computeTemperature()\r\n");
+#endif
                 tempState = TEMP_ERROR;
             }
             
@@ -167,38 +177,46 @@ void tempMonitor_printResults(void)
     temperatureResultsReady = false;
     
     //Get temp (in Celsius)
-    float sensorTemp, objTemp;
-    sensorTemp = MLX90632_getSensorTemp();
-    objTemp = MLX90632_getObjectTemp();
+    float_hex sensorTemp, objTemp;
+    sensorTemp.value = MLX90632_getSensorTemp();
+    objTemp.value = MLX90632_getObjectTemp();
     
     if (tempUnit == 'F')
     {
         //Convert to Fahrenheit
-        sensorTemp = (sensorTemp * 1.8) + 32;
-        objTemp = (objTemp * 1.8) + 32;
+        sensorTemp.value = (sensorTemp.value * 1.8) + 32;
+        objTemp.value = (objTemp.value * 1.8) + 32;
     }
     else if (tempUnit == 'K')
     {
         //Convert to Kelvin
-        sensorTemp += 273.15;
-        objTemp += 273.15;
+        sensorTemp.value += 273.15;
+        objTemp.value += 273.15;
     }
     else if (tempUnit != 'C')
     {
         //Invalid Units
         
+#ifndef DV_FLOAT_OUT
         //Print Constant String
         USB_sendString("[WARN] Invalid Unit Specifier for Temperature: ");
+#endif
         
         //Then call sprintf to print the value
         sprintf(USB_getCharBuffer(), "%c\r\n", tempUnit);
         USB_sendBufferedString();
     }
     
+#ifndef DV_FLOAT_OUT
     //Queue Data to Send
     sprintf(USB_getCharBuffer(), "Sensor Temperature: %2.1f%c\r\nRoom Temperature: %2.1f%c\r\n\r\n",
-        sensorTemp, tempUnit, objTemp, tempUnit);
+        sensorTemp.value, tempUnit, objTemp.value, tempUnit);
+#else
     
+    //Data to send
+    USB_sendResults(sensorTemp.hexCode, objTemp.hexCode);
+    
+#endif
     //Print String
     USB_sendBufferedString();
 }

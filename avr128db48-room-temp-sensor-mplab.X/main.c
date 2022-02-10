@@ -46,7 +46,6 @@
 #include "TWI0_host.h"
 
 #include "system.h"
-#include "TCB0_oneShot.h"
 #include "RTC.h"
 #include "printUtility.h"
 
@@ -66,7 +65,7 @@ int main(void)
         
     //Start Interrupts
     sei();
-        
+            
     while(1)
     {                                                
         //Run the thermometer state machine
@@ -74,7 +73,7 @@ int main(void)
         
         //If ready to print results...
         if (tempMonitor_getResultStatus())
-        {
+        {     
             tempMonitor_printResults();
         }
         

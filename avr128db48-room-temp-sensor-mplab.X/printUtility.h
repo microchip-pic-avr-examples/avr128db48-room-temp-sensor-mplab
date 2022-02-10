@@ -21,6 +21,11 @@ extern "C" {
     //Prints a constant string to the UART
     void USB_sendString(const char* text);
     
+    //Prints a specially formatted packet for MPLAB Data Visualizer
+    //Inputs are the binary representation of the floating point values
+    //Byte 0 - 3 = room temperature, 4 - 7 = sensor temperature
+    void USB_sendResults(uint32_t roomTemp, uint32_t sensTemp);
+    
 #ifdef	__cplusplus
 }
 #endif

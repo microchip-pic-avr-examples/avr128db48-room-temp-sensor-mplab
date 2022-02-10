@@ -11,6 +11,10 @@ extern "C" {
 //Default Temperature Unit for Printing
 #define DEFAULT_TEMP_UNIT 'F'
 
+//If set, the output of this is formatted for the Data Visualizer's Variable Streamer
+//If NOT set, the output is in plaintext
+#define DV_FLOAT_OUT
+    
     //Init the Temp Monitor
     void tempMonitor_init(bool safeStart);
         

@@ -3,7 +3,6 @@
 #include <avr/io.h>
 
 #include "GPIO.h"
-#include "TCB0_oneShot.h"
 #include "TWI0_host.h"
 #include "usart3.h"
 #include "RTC.h"
@@ -34,11 +33,6 @@ void System_initDevice(void)
 //Inits peripherals
 void System_initPeripherals(void)
 {
-    //Init EVSYS
-    
-    //TCB0 uses channel 0
-    EVSYS.USERTCB0CAPT = EVSYS_USER_CHANNEL0_gc;
-    
     //Init GPIO
     GPIO_init();
                 
@@ -52,9 +46,6 @@ void System_initPeripherals(void)
         
     //Enable USART for USB (TX Only)
     USART3_enableTX();
-    
-    //Init TCB0 for 1-shot timing
-    TCB0_init();
     
     //Init RTC
     RTC_init();
