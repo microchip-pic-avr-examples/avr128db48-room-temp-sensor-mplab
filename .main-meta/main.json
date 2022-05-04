@@ -4,7 +4,7 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.avr128db48-room-temp-sensor-mplab",
-        "version": "1.0.0",
+        "version": "1.1.0",
         "displayName": "Room Temperature Monitor with AVR DB and MLX90632",
         "projectName": "avr128db48-room-temp-sensor-mplab",
         "shortDescription": "Using an MLX90632 FIR sensor, the AVR DB will calculate the room temperature and print the value to a UART.",
@@ -15,12 +15,12 @@
         "compiler": [
             {
                 "name": "XC8",
-                "semverRange": "^2.35.0"
+                "semverRange": "^2.36.0"
             }
         ],
         "dfp": {
             "name": "AVR-Dx_DFP",
-            "semverRange": ">=2.0.151"
+            "semverRange": ">=2.1.152"
         },
         "device": {
             "metaDataVersion": "1.0.0",

@@ -27,9 +27,9 @@ void RTC_init(void)
     //Wait for sync before modifying...
     while (RTC.STATUS & RTC_PERBUSY_bm);
     
-    //Set Period to 0.5s 
-    //0x0F0 = 128
-    RTC.PER = 0xF0;
+    //Set Period to 0.125s 
+    //0x0F = 15
+    RTC.PER = 0x0F;
     
     //Wait for sync before modifying...
     while (RTC.STATUS & RTC_CTRLABUSY_bm);
